@@ -10,14 +10,14 @@ set -euo pipefail
 # -----------------------
 # Usage examples (how to call the script)
 # -----------------------
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) install 'APIURL' 'ClientID' 'SiteID' 'AuthKey' 'AgentType'"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) install 'https://api.tld.com/' '5' '9' 'xxxxxxxxxx' 'workstation'"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) auto_install"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) interactive_install"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) enablepermissions"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) sequoiafix"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) update"
-# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/SyNode-IT/MacRMM-Script/main/rmmagent-mac.sh) uninstall"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) install 'APIURL' 'ClientID' 'SiteID' 'AuthKey' 'AgentType'"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) install 'https://api.tld.com/' '5' '9' 'xxxxxxxxxx' 'workstation'"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) auto_install"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) interactive_install"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) enablepermissions"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) sequoiafix"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) update"
+# sudo /bin/bash -c "$(curl -sSL https://raw.githubusercontent.com/Mattchis/MacRMM-Script/main/rmmagent-mac.sh) uninstall"
 
 # -----------------------
 # Global configuration
