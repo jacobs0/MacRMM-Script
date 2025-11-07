@@ -197,7 +197,8 @@ agent_compile() {
 
 install_agent() {
   banner "Installing TacticalRMM Agent"
-  cp "$WORKDIR/temp_rmmagent" /usr/local/bin/rmmagent
+  mkdir -p -m 755 /usr/local/bin/
+  cp "$WORKDIR/temp_rmmagent/rmmagent" /usr/local/bin/rmmagent
   /usr/local/bin/rmmagent -m install \
     -meshdir /opt/tacticalmesh \
     -api "$RMM_URL" \
