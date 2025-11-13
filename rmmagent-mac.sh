@@ -193,7 +193,7 @@ agent_compile() {
   esac
   popd >/dev/null
   ok "Agent compiled to $WORKDIR/temp_rmmagent"
-  ls $WORKDIR/temp_rmmagent
+  ls $WORKDIR/temp_rmmagent/
 }
 
 install_agent() {
