@@ -184,21 +184,24 @@ agent_compile() {
   banner "Compiling TacticalRMM Agent"
   local zip="$WORKDIR/rmmagent.zip"
   curl -fsSL -o "$zip" "https://github.com/amidaware/rmmagent/archive/refs/heads/master.zip"
-  unzip -q "$zip" -d "$WORKDIR"
+  ls  $WORKDIR
+  unzip "$zip" -d "$WORKDIR"
   rm -f "$zip"
+
   pushd "$WORKDIR/rmmagent-master" >/dev/null
   case "$(uname -m)" in
-    x86_64) env CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o "$WORKDIR/temp_rmmagent" ;;
-    arm64)  env CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -ldflags "-s -w" -o "$WORKDIR/temp_rmmagent" ;;
+    x86_64) env CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o "$WORKDIR/temp_rmmagent/" ;;
+    arm64)  env CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -ldflags "-s -w" -o "$WORKDIR/temp_rmmagent/" ;;
+    *) echo "duypa cycki";;
   esac
   popd >/dev/null
   ok "Agent compiled to $WORKDIR/temp_rmmagent"
-  ls $WORKDIR/temp_rmmagent/
+  ls  $WORKDIR/temp_rmmagent/
 }
 
 install_agent() {
   banner "Installing TacticalRMM Agent"
-  mkdir -p -m 755 /usr/local/bin/
+  mkdir -p -m 755 /usr/local/bin/ 
   cp "$WORKDIR/temp_rmmagent/rmmagent" /usr/local/bin/rmmagent
   /usr/local/bin/rmmagent -m install \
     -meshdir /opt/tacticalmesh \
@@ -207,7 +210,7 @@ install_agent() {
     -site-id "$RMM_SITE_ID" \
     -agent-type "$RMM_AGENT_TYPE" \
     -auth "$RMM_AUTH"
-  #rm -f "$WORKDIR/temp_rmmagent"
+  rm -f "$WORKDIR/temp_rmmagent"
   /usr/bin/xattr -r -d com.apple.quarantine /opt/tacticalmesh/meshagent || true
   ok "TacticalRMM agent installed."
 }
