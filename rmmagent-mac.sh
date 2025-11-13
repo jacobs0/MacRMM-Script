@@ -193,6 +193,7 @@ agent_compile() {
   esac
   popd >/dev/null
   ok "Agent compiled to $WORKDIR/temp_rmmagent"
+  ls $WORKDIR/temp_rmmagent
 }
 
 install_agent() {
@@ -206,7 +207,7 @@ install_agent() {
     -site-id "$RMM_SITE_ID" \
     -agent-type "$RMM_AGENT_TYPE" \
     -auth "$RMM_AUTH"
-  rm -f "$WORKDIR/temp_rmmagent"
+  #rm -f "$WORKDIR/temp_rmmagent"
   /usr/bin/xattr -r -d com.apple.quarantine /opt/tacticalmesh/meshagent || true
   ok "TacticalRMM agent installed."
 }
