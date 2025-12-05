@@ -210,7 +210,7 @@ install_agent() {
     -site-id "$RMM_SITE_ID" \
     -agent-type "$RMM_AGENT_TYPE" \
     -auth "$RMM_AUTH"
-  rm -f "$WORKDIR/temp_rmmagent"
+  rm -fr "$WORKDIR/temp_rmmagent"
   /usr/bin/xattr -r -d com.apple.quarantine /opt/tacticalmesh/meshagent || true
   ok "TacticalRMM agent installed."
 }
